@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/src/widgets/custom_icon_button.dart';
 import 'package:table_calendar/src/widgets/format_button.dart';
@@ -13,6 +12,7 @@ import '../shared/utils.dart' show CalendarFormat, DayBuilder;
 class CalendarHeader extends StatelessWidget {
   final dynamic locale;
   final DateTime focusedMonth;
+  final DateTime focusedYear;
   final CalendarFormat calendarFormat;
   final HeaderStyle headerStyle;
   final VoidCallback onLeftChevronTap;
@@ -28,6 +28,7 @@ class CalendarHeader extends StatelessWidget {
     Key? key,
     this.locale,
     required this.focusedMonth,
+    required this.focusedYear,
     required this.calendarFormat,
     required this.headerStyle,
     required this.onLeftChevronTap,
@@ -45,8 +46,8 @@ class CalendarHeader extends StatelessWidget {
     final text = headerStyle.titleTextFormatter?.call(focusedMonth, locale) ??
         DateFormat.MMMM(locale).format(focusedMonth);
     final textYear =
-        headerStyle.titleTextFormatter?.call(focusedMonth, locale) ??
-            DateFormat.y(locale).format(focusedMonth);
+        headerStyle.titleTextFormatter?.call(focusedYear, locale) ??
+            DateFormat.y(locale).format(focusedYear);
 
     return Container(
       decoration: headerStyle.decoration,
@@ -107,7 +108,7 @@ class CalendarHeader extends StatelessWidget {
                       ),
                       CustomIconButton(
                           icon: headerStyle.rightChevronIcon,
-                          onTap: onLeftChevronTap),
+                          onTap: onRightChevronTap),
                     ],
                   ),
                 ),
