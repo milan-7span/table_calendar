@@ -204,6 +204,8 @@ class TableCalendar<T> extends StatefulWidget {
   /// Called when the calendar is created. Exposes its PageController.
   final void Function(PageController pageController)? onCalendarCreated;
 
+  final bool useCustomHeader;
+
   /// Creates a `TableCalendar` widget.
   TableCalendar({
     Key? key,
@@ -216,6 +218,7 @@ class TableCalendar<T> extends StatefulWidget {
     this.rangeEndDay,
     this.weekendDays = const [DateTime.saturday, DateTime.sunday],
     this.calendarFormat = CalendarFormat.month,
+    this.useCustomHeader = false,
     this.availableCalendarFormats = const {
       CalendarFormat.month: 'Month',
       CalendarFormat.twoWeeks: '2 weeks',
@@ -462,6 +465,7 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
                 onHeaderLongPress: () =>
                     widget.onHeaderLongPressed?.call(value),
                 headerStyle: widget.headerStyle,
+                useCustomHeader: widget.useCustomHeader,
                 availableCalendarFormats: widget.availableCalendarFormats,
                 calendarFormat: widget.calendarFormat,
                 locale: widget.locale,
