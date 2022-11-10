@@ -59,9 +59,10 @@ class CalendarHeader extends StatelessWidget {
                 Container(
                   height: 42,
                   margin: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: Colors.black.withOpacity(0.3),
                     ),
@@ -70,6 +71,7 @@ class CalendarHeader extends StatelessWidget {
                     children: [
                       CustomIconButton(
                           icon: headerStyle.leftChevronIcon,
+                          padding: EdgeInsets.all(4),
                           onTap: onLeftChevronTap),
                       Text(
                         text,
@@ -77,6 +79,7 @@ class CalendarHeader extends StatelessWidget {
                       ),
                       CustomIconButton(
                           icon: headerStyle.rightChevronIcon,
+                          padding: EdgeInsets.all(4),
                           onTap: onRightChevronTap),
                     ],
                   ),
@@ -85,6 +88,7 @@ class CalendarHeader extends StatelessWidget {
                 Container(
                   height: 42,
                   margin: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
