@@ -27,6 +27,7 @@ class HeaderStyle {
   /// titleTextFormatter: (date, locale) => DateFormat.yM(locale).format(date),
   /// ```
   final TextFormatter? titleTextFormatter;
+  final TextFormatter? subTitleTextFormatter;
 
   /// Style for title Text (month-year) displayed in header.
   final TextStyle titleTextStyle;
@@ -85,6 +86,7 @@ class HeaderStyle {
     this.formatButtonVisible = true,
     this.formatButtonShowsNext = true,
     this.titleTextFormatter,
+    this.subTitleTextFormatter,
     this.titleTextStyle = const TextStyle(fontSize: 17.0),
     this.formatButtonTextStyle = const TextStyle(fontSize: 14.0),
     this.formatButtonDecoration = const BoxDecoration(
