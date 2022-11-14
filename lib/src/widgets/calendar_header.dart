@@ -17,6 +17,8 @@ class CalendarHeader extends StatelessWidget {
   final HeaderStyle headerStyle;
   final VoidCallback onLeftChevronTap;
   final VoidCallback onRightChevronTap;
+  final VoidCallback onLeftYearTap;
+  final VoidCallback onRightYearTap;
   final VoidCallback onHeaderTap;
   final VoidCallback onHeaderLongPress;
   final ValueChanged<CalendarFormat> onFormatButtonTap;
@@ -37,6 +39,8 @@ class CalendarHeader extends StatelessWidget {
     required this.onHeaderLongPress,
     required this.onFormatButtonTap,
     required this.availableCalendarFormats,
+    required this.onLeftYearTap,
+    required this.onRightYearTap,
     this.useCustomHeader = false,
     this.headerTitleBuilder,
   }) : super(key: key);
@@ -72,7 +76,7 @@ class CalendarHeader extends StatelessWidget {
                     children: [
                       CustomIconButton(
                           icon: headerStyle.leftChevronIcon,
-                          padding: EdgeInsets.all(4),
+                          padding: EdgeInsets.all(0),
                           onTap: onLeftChevronTap),
                       Text(
                         text,
@@ -80,7 +84,7 @@ class CalendarHeader extends StatelessWidget {
                       ),
                       CustomIconButton(
                           icon: headerStyle.rightChevronIcon,
-                          padding: EdgeInsets.all(4),
+                          padding: EdgeInsets.all(0),
                           onTap: onRightChevronTap),
                     ],
                   ),
@@ -101,14 +105,16 @@ class CalendarHeader extends StatelessWidget {
                     children: [
                       CustomIconButton(
                           icon: headerStyle.leftChevronIcon,
-                          onTap: onLeftChevronTap),
+                          padding: EdgeInsets.all(0),
+                          onTap: onLeftYearTap),
                       Text(
                         textYear,
                         style: headerStyle.titleTextStyle,
                       ),
                       CustomIconButton(
                           icon: headerStyle.rightChevronIcon,
-                          onTap: onRightChevronTap),
+                          padding: EdgeInsets.all(0),
+                          onTap: onRightYearTap),
                     ],
                   ),
                 ),
