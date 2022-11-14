@@ -205,6 +205,8 @@ class TableCalendar<T> extends StatefulWidget {
   final void Function(PageController pageController)? onCalendarCreated;
 
   final bool useCustomHeader;
+  final VoidCallback onLeftYearTap;
+  final VoidCallback onRightYearTap;
 
   /// Creates a `TableCalendar` widget.
   TableCalendar({
@@ -263,6 +265,8 @@ class TableCalendar<T> extends StatefulWidget {
     this.onPageChanged,
     this.onFormatChanged,
     this.onCalendarCreated,
+    required this.onLeftYearTap,
+    required this.onRightYearTap,
   })  : assert(availableCalendarFormats.keys.contains(calendarFormat)),
         assert(availableCalendarFormats.length <= CalendarFormat.values.length),
         assert(weekendDays.isNotEmpty
@@ -462,6 +466,8 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
                 focusedYear: value,
                 onLeftChevronTap: _onLeftChevronTap,
                 onRightChevronTap: _onRightChevronTap,
+                onLeftYearTap: widget.onLeftYearTap,
+                onRightYearTap: widget.onRightYearTap,
                 onHeaderTap: () => widget.onHeaderTapped?.call(value),
                 onHeaderLongPress: () =>
                     widget.onHeaderLongPressed?.call(value),

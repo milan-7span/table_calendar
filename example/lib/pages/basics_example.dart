@@ -40,6 +40,8 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
       firstDay: DateTime(2001),
       lastDay: DateTime(2075),
       focusedDay: _focusedDay,
+      onLeftYearTap: () {},
+      onRightYearTap: () {},
       headerStyle: HeaderStyle(
           leftChevronIcon: Icon(Icons.arrow_back_ios),
           rightChevronIcon: Icon(Icons.arrow_forward_ios)),

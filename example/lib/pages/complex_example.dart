@@ -140,6 +140,8 @@ class _TableComplexExampleState extends State<TableComplexExample> {
             firstDay: kFirstDay,
             lastDay: kLastDay,
             focusedDay: _focusedDay.value,
+            onLeftYearTap: () {},
+            onRightYearTap: () {},
             headerVisible: false,
             selectedDayPredicate: (day) => _selectedDays.contains(day),
             rangeStartDay: _rangeStart,

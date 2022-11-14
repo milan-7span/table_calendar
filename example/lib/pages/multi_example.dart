@@ -68,6 +68,8 @@ class _TableMultiExampleState extends State<TableMultiExample> {
         children: [
           TableCalendar<Event>(
             firstDay: kFirstDay,
+            onLeftYearTap: () {},
+            onRightYearTap: () {},
             lastDay: kLastDay,
             focusedDay: _focusedDay,
             calendarFormat: _calendarFormat,
