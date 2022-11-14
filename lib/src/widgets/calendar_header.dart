@@ -88,11 +88,11 @@ class CalendarHeader extends StatelessWidget {
                 Spacer(),
                 Container(
                   height: 42,
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.only(right: 10),
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: Colors.black.withOpacity(0.3),
                     ),
